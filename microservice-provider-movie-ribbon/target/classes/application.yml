@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: microservice-provider-movie-ribbon
+server:
+  port: 7801
+#user:
+ # userServicePath: http://127.0.0.1:7900/simple/
+eureka:
+  client:
+    healthcheck:
+      enabled : true
+    serviceUrl:
+       defaultZone: http://user:user123@localhost:8761/eureka   #注册到eureka服务中
+  instance:
+      prefer-ip-address: true   #显示主机id地址
+      instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}}

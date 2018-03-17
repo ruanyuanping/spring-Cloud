@@ -1,0 +1,14 @@
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: user123  
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false   ##本服务是否开启客户端,由于是单机所以这里设置为false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://user:user123@localhost:8761/eureka   #eureka访问时的用户名和密码
